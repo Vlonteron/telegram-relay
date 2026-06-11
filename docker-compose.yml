@@ -1,0 +1,9 @@
+services:
+  telegram-relay:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "${PORT:-3080}:3080"
+    environment:
+      PORT: 3080
+      API_SECRET: ${API_SECRET}
